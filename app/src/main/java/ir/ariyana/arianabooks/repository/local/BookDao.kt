@@ -18,5 +18,5 @@ interface BookDao {
     suspend fun requestDeletion(book: Book)
 
     @Query("SELECT * FROM table_book")
-    suspend fun requestBooks(): LiveData<List<Book>>
+    fun requestBooks(): LiveData<List<Book>>
 }

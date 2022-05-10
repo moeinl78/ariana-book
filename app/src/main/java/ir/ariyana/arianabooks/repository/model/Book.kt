@@ -26,8 +26,6 @@ data class Book(
     val bookReviewLink: String,
     @SerializedName("book_uri")
     val bookUri: String,
-    @SerializedName("buy_links")
-    val buyLinks: List<BuyLink>,
     @SerializedName("contributor")
     val contributor: String,
     @SerializedName("contributor_note")

@@ -19,6 +19,6 @@ class MainRepository @Inject constructor(
     suspend fun requestDeletion(book: Book) =
         bookDAO.requestDeletion(book)
 
-    suspend fun requestBooks() =
+    fun requestBooks() =
         bookDAO.requestBooks()
 }
