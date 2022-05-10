@@ -4,7 +4,7 @@ import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
-import ir.ariyana.arianabooks.repository.model.Book
+import ir.ariyana.arianabooks.repository.model.room.Book
 
 @Database(entities = [Book::class], version = 1, exportSchema = false)
 abstract class BookDatabase: RoomDatabase() {

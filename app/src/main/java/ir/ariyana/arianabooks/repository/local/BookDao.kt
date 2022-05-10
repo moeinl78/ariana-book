@@ -6,7 +6,7 @@ import androidx.room.Delete
 import androidx.room.Insert
 import androidx.room.OnConflictStrategy.REPLACE
 import androidx.room.Query
-import ir.ariyana.arianabooks.repository.model.Book
+import ir.ariyana.arianabooks.repository.model.room.Book
 
 @Dao
 interface BookDao {

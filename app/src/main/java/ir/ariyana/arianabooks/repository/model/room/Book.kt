@@ -1,8 +1,13 @@
-package ir.ariyana.arianabooks.repository.model
+package ir.ariyana.arianabooks.repository.model.room
 
+import androidx.room.Entity
+import androidx.room.PrimaryKey
 import com.google.gson.annotations.SerializedName
 
+@Entity(tableName = "table_book")
 data class Book(
+    @PrimaryKey(autoGenerate = true)
+    var id: Int ?= null,
     @SerializedName("age_group")
     val ageGroup: String,
     @SerializedName("amazon_product_url")
@@ -21,8 +26,6 @@ data class Book(
     val bookReviewLink: String,
     @SerializedName("book_uri")
     val bookUri: String,
-    @SerializedName("buy_links")
-    val buyLinks: List<BuyLink>,
     @SerializedName("contributor")
     val contributor: String,
     @SerializedName("contributor_note")

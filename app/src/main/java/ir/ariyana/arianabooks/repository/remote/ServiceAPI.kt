@@ -9,6 +9,6 @@ interface ServiceAPI {
 
     @GET("lists/overview.json")
     suspend fun getBooksOverview(
-        @Query("apiKey") apiKey: String = "CFGmGBqGHX5bfNFxZZxh4dtziwgl6PXa"
+        @Query("api-key") apiKey: String = "CFGmGBqGHX5bfNFxZZxh4dtziwgl6PXa"
     ): Response<BooksOverviewResponse>
 }

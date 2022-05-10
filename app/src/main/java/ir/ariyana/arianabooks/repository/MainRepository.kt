@@ -1,7 +1,7 @@
 package ir.ariyana.arianabooks.repository
 
 import ir.ariyana.arianabooks.repository.local.BookDao
-import ir.ariyana.arianabooks.repository.model.Book
+import ir.ariyana.arianabooks.repository.model.room.Book
 import ir.ariyana.arianabooks.repository.remote.ServiceAPI
 import javax.inject.Inject
 

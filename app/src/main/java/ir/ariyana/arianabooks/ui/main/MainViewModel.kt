@@ -1,5 +1,6 @@
 package ir.ariyana.arianabooks.ui.main
 
+import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -29,7 +30,9 @@ class MainViewModel @Inject constructor(
                 if(res.isSuccessful) {
                     _response.postValue(Resource.Success(res.body()))
                 }
-                _response.postValue(Resource.Error(res.message()))
+                else {
+                    _response.postValue(Resource.Error(res.message()))
+                }
             }
             catch (e : Exception) {
                 _response.postValue(Resource.Error("An exception occurred!"))
