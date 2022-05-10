@@ -6,6 +6,7 @@ import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.android.qualifiers.ApplicationContext
 import dagger.hilt.components.SingletonComponent
+import ir.ariyana.arianabooks.repository.MainRepository
 import ir.ariyana.arianabooks.repository.local.BookDao
 import ir.ariyana.arianabooks.repository.local.BookDatabase
 import ir.ariyana.arianabooks.repository.remote.ServiceAPI
@@ -36,4 +37,9 @@ object AppModule {
         BookDatabase
             .createDatabase(context)
             .bookDao
+
+    @Provides
+    @Singleton
+    fun provideMainRepository(provideRetrofitAPI: ServiceAPI, provideBookDAO: BookDao): MainRepository =
+        MainRepository(provideRetrofitAPI, provideBookDAO)
 }
