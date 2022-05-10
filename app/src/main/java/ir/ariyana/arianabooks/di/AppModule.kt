@@ -1,9 +1,13 @@
 package ir.ariyana.arianabooks.di
 
+import android.content.Context
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
+import dagger.hilt.android.qualifiers.ApplicationContext
 import dagger.hilt.components.SingletonComponent
+import ir.ariyana.arianabooks.repository.local.BookDao
+import ir.ariyana.arianabooks.repository.local.BookDatabase
 import ir.ariyana.arianabooks.repository.remote.ServiceAPI
 import ir.ariyana.arianabooks.utils.Constants
 import retrofit2.Retrofit
@@ -14,6 +18,7 @@ import javax.inject.Singleton
 @InstallIn(SingletonComponent::class)
 object AppModule {
 
+    // RETROFIT INSTANCE
     @Provides
     @Singleton
     fun provideRetrofitAPI(): ServiceAPI =
@@ -23,4 +28,12 @@ object AppModule {
             .addConverterFactory(GsonConverterFactory.create())
             .build()
             .create(ServiceAPI::class.java)
+
+    // DATABASE INSTANCE TO ACCESS BOOK DAO
+    @Provides
+    @Singleton
+    fun provideBookDAO(@ApplicationContext context: Context): BookDao =
+        BookDatabase
+            .createDatabase(context)
+            .bookDao
 }
