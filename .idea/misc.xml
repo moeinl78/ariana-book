@@ -4,8 +4,10 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/moein/AndroidStudioProjects/ArianaBooks/app/src/main/res/drawable/ic_baseline_star_24.xml" value="0.147" />
+        <entry key="..\:/Users/moein/AndroidStudioProjects/ArianaBooks/app/src/main/res/drawable/selector_chip_color.xml" value="0.1375" />
+        <entry key="..\:/Users/moein/AndroidStudioProjects/ArianaBooks/app/src/main/res/drawable/selector_text_color.xml" value="0.1375" />
         <entry key="..\:/Users/moein/AndroidStudioProjects/ArianaBooks/app/src/main/res/layout/activity_main.xml" value="0.2526041666666667" />
-        <entry key="..\:/Users/moein/AndroidStudioProjects/ArianaBooks/app/src/main/res/layout/fragment_home.xml" value="0.189453125" />
+        <entry key="..\:/Users/moein/AndroidStudioProjects/ArianaBooks/app/src/main/res/layout/fragment_home.xml" value="0.264" />
         <entry key="..\:/Users/moein/AndroidStudioProjects/ArianaBooks/app/src/main/res/layout/fragment_info.xml" value="0.2515625" />
         <entry key="..\:/Users/moein/AndroidStudioProjects/ArianaBooks/app/src/main/res/layout/fragment_profile.xml" value="0.2526041666666667" />
         <entry key="..\:/Users/moein/AndroidStudioProjects/ArianaBooks/app/src/main/res/layout/fragment_search.xml" value="0.2526041666666667" />

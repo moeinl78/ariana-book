@@ -1,6 +1,35 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/navigation">
+    android:id="@+id/navigation"
+    app:startDestination="@id/fragmentHome">
 
+    <fragment
+        android:id="@+id/fragmentHome"
+        android:name="ir.ariyana.arianabooks.ui.fragments.FragmentHome"
+        android:label="FragmentHome" >
+        <action
+            android:id="@+id/action_fragmentHome_to_fragmentInfo"
+            app:destination="@id/fragmentInfo" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragmentSearch"
+        android:name="ir.ariyana.arianabooks.ui.fragments.FragmentSearch"
+        android:label="FragmentSearch" >
+        <action
+            android:id="@+id/action_fragmentSearch_to_fragmentInfo"
+            app:destination="@id/fragmentInfo" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragmentProfile"
+        android:name="ir.ariyana.arianabooks.ui.fragments.FragmentProfile"
+        android:label="FragmentProfile" >
+        <action
+            android:id="@+id/action_fragmentProfile_to_fragmentInfo"
+            app:destination="@id/fragmentInfo" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragmentInfo"
+        android:name="ir.ariyana.arianabooks.ui.fragments.FragmentInfo"
+        android:label="FragmentInfo" />
 </navigation>

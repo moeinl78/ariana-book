@@ -3,4 +3,11 @@
     <string name="home">Home</string>
     <string name="search">Search</string>
     <string name="profile">Profile</string>
+    <string name="all">All</string>
+    <string name="fiction">Fiction</string>
+    <string name="novel">Novel</string>
+    <string name="fantasy">Fantasy</string>
+    <string name="romance">Romance</string>
+    <string name="horror">Horror</string>
+    <string name="poetry">Poetry</string>
 </resources>
