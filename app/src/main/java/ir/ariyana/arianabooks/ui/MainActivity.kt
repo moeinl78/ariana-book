@@ -30,27 +30,5 @@ class MainActivity : AppCompatActivity() {
         val bottomNavigationView = binding.mainBottomNavigationView
 
         NavigationUI.setupWithNavController(bottomNavigationView, navHostFragment!!.findNavController())
-
-        viewModel
-            .getBooksOverview()
-
-        viewModel
-            .response
-            .observe(this) { response ->
-                when(response) {
-
-                    is Resource.Success -> {
-                        Log.i("main", response.data!!.results.toString())
-                    }
-
-                    is Resource.Error -> {
-                        Log.e("main", response.message!!)
-                    }
-
-                    is Resource.Loading -> {
-                        Log.i("main", "ok")
-                    }
-                }
-            }
     }
 }

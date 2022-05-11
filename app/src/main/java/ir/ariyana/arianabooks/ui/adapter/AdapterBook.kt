@@ -8,7 +8,6 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import ir.ariyana.arianabooks.databinding.ItemRecyclerViewBinding
 import ir.ariyana.arianabooks.repository.model.Book
-import ir.ariyana.arianabooks.repository.model.BooksOverviewResponse
 
 class AdapterBook(private val events: Events): ListAdapter<Book, AdapterBook.ViewHolder>(BookDiffCallback()) {
 
