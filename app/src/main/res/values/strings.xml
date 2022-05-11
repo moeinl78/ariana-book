@@ -13,4 +13,17 @@
     <string name="harry_potter">Harry Potter</string>
     <string name="j_k_rowling">J.K Rowling</string>
     <string name="_22_00">$22.00</string>
+    <string name="author_j_k_rowling">Author: J.K.Rowling</string>
+    <string name="released_8_august_2002">Released: 8 August 2002</string>
+    <string name="downloaded_234_users">Downloaded: 234 Users</string>
+    <string name="publisher_atria">Publisher: Atria</string>
+    <string name="atria">Atria</string>
+    <string name="publisher">Publisher</string>
+    <string name="rank">Rank</string>
+    <string name="rank_number">1</string>
+    <string name="contributor">Contributor</string>
+    <string name="contributor_name">Colleen Hoover</string>
+    <string name="book_description">Book Description</string>
+    <string name="lorem">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</string>
+    <string name="buy">Buy</string>
 </resources>
