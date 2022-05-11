@@ -35,10 +35,6 @@ class AdapterBook: ListAdapter<Book, AdapterBook.ViewHolder>(BookDiffCallback())
         val item = getItem(position)
         holder.bind(item)
     }
-
-    override fun getItemCount(): Int {
-        return itemCount
-    }
 }
 
 class BookDiffCallback: DiffUtil.ItemCallback<Book>() {
