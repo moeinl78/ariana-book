@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
@@ -14,6 +15,7 @@ import ir.ariyana.arianabooks.repository.model.Book
 import ir.ariyana.arianabooks.ui.adapter.AdapterBook
 import ir.ariyana.arianabooks.ui.main.MainViewModel
 import ir.ariyana.arianabooks.utils.Constants
+import ir.ariyana.arianabooks.utils.Resource
 
 class FragmentHome: Fragment(), AdapterBook.Events {
 
@@ -38,16 +40,35 @@ class FragmentHome: Fragment(), AdapterBook.Events {
 
         viewModel
             .response
-            .observe(viewLifecycleOwner) { item ->
-                val books = mutableListOf<Book>()
-                item.data?.let { res ->
-                    res.results.lists.map {
-                        it.books.map { book ->
-                            books.add(book)
+            .observe(viewLifecycleOwner) { response ->
+
+                when(response) {
+
+                    is Resource.Success -> {
+
+                        val books = mutableListOf<Book>()
+                        response.data?.let { res ->
+                            res.results.lists.map {
+                                it.books.map { book ->
+                                    books.add(book)
+                                }
+                            }
                         }
+                        adapter.submitList(books)
+                        binding.homeProgressBar.visibility = View.GONE
+                    }
+
+                    is Resource.Error -> {
+
+                        Toast.makeText(binding.root.context, response.message, Toast.LENGTH_SHORT).show()
+                        binding.homeProgressBar.visibility = View.GONE
+                    }
+
+                    is Resource.Loading -> {
+
+                        binding.homeProgressBar.visibility = View.VISIBLE
                     }
                 }
-                adapter.submitList(books)
             }
 
         binding.homeRecyclerViewBook.adapter = adapter
