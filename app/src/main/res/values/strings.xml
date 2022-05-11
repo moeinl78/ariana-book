@@ -10,4 +10,7 @@
     <string name="romance">Romance</string>
     <string name="horror">Horror</string>
     <string name="poetry">Poetry</string>
+    <string name="harry_potter">Harry Potter</string>
+    <string name="j_k_rowling">J.K Rowling</string>
+    <string name="_22_00">$22.00</string>
 </resources>
