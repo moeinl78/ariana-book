@@ -59,6 +59,10 @@
         android:id="@+id/fragmentInfo"
         android:name="ir.ariyana.arianabooks.ui.fragments.FragmentInfo"
         android:label="FragmentInfo"
-        />
+        >
+        <argument
+            android:name="book"
+            app:argType="ir.ariyana.arianabooks.repository.model.Book" />
+    </fragment>
 
 </navigation>

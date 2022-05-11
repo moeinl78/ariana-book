@@ -1,6 +1,7 @@
 package ir.ariyana.arianabooks.repository.model
 
 import com.google.gson.annotations.SerializedName
+import java.io.Serializable
 
 data class Book(
     @SerializedName("age_group")
@@ -53,4 +54,4 @@ data class Book(
     val updatedDate: String,
     @SerializedName("weeks_on_list")
     val weeksOnList: Int
-)
+): Serializable
