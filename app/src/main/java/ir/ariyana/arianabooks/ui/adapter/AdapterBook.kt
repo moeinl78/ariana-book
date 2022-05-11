@@ -10,7 +10,7 @@ import ir.ariyana.arianabooks.databinding.ItemRecyclerViewBinding
 import ir.ariyana.arianabooks.repository.model.Book
 import ir.ariyana.arianabooks.repository.model.BooksOverviewResponse
 
-class AdapterBook: ListAdapter<Book, AdapterBook.ViewHolder>(BookDiffCallback()) {
+class AdapterBook(private val events: Events): ListAdapter<Book, AdapterBook.ViewHolder>(BookDiffCallback()) {
 
     inner class ViewHolder(private val binding: ItemRecyclerViewBinding): RecyclerView.ViewHolder(binding.root) {
 
@@ -23,6 +23,10 @@ class AdapterBook: ListAdapter<Book, AdapterBook.ViewHolder>(BookDiffCallback())
                 .with(binding.root.context)
                 .load(item.bookImage)
                 .into(binding.itemBookImage)
+
+            itemView.setOnClickListener {
+                events.onItemClick(item)
+            }
         }
     }
 
@@ -34,6 +38,10 @@ class AdapterBook: ListAdapter<Book, AdapterBook.ViewHolder>(BookDiffCallback())
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val item = getItem(position)
         holder.bind(item)
+    }
+
+    interface Events {
+        fun onItemClick(item: Book)
     }
 }
 

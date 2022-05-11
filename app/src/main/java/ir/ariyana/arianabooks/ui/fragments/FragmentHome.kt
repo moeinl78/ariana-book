@@ -6,17 +6,16 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
-import androidx.fragment.app.viewModels
-import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
-import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
+import ir.ariyana.arianabooks.R
 import ir.ariyana.arianabooks.databinding.FragmentHomeBinding
 import ir.ariyana.arianabooks.repository.model.Book
 import ir.ariyana.arianabooks.ui.adapter.AdapterBook
 import ir.ariyana.arianabooks.ui.main.MainViewModel
+import ir.ariyana.arianabooks.utils.Constants
 
-class FragmentHome: Fragment() {
+class FragmentHome: Fragment(), AdapterBook.Events {
 
     private lateinit var binding: FragmentHomeBinding
     private lateinit var adapter: AdapterBook
@@ -35,15 +34,17 @@ class FragmentHome: Fragment() {
         viewModel
             .getBooksOverview()
 
-        adapter = AdapterBook()
+        adapter = AdapterBook(this)
 
         viewModel
             .response
             .observe(viewLifecycleOwner) { item ->
                 val books = mutableListOf<Book>()
                 item.data?.let { res ->
-                    res.results.lists[0].books.map { book ->
-                        books.add(book)
+                    res.results.lists.map {
+                        it.books.map { book ->
+                            books.add(book)
+                        }
                     }
                 }
                 adapter.submitList(books)
@@ -52,5 +53,11 @@ class FragmentHome: Fragment() {
         binding.homeRecyclerViewBook.adapter = adapter
         binding.homeRecyclerViewBook.layoutManager =
             GridLayoutManager(binding.root.context, 2)
+    }
+
+    override fun onItemClick(item: Book) {
+        val bundle = Bundle()
+        bundle.putSerializable(Constants.INFO_NAVIGATION_ARG, item)
+        findNavController().navigate(R.id.action_fragmentHome_to_fragmentInfo, bundle)
     }
 }
